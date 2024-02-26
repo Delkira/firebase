@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>motos</title>
+
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center mt-4">
+        <div
+          class="btn-group m-1"
+          role="group"
+          aria-label="Botones de Navegación"
+        >
+          <a href="añadir-marca.html" class="btn btn-primary m-1"
+            >Añadir Marca</a
+          >
+          <a href="añadir-motos.html" class="btn btn-primary m-1"
+            >Añadir Motos</a
+          >
+          <a href="hacer-venta.html" class="btn btn-primary m-1">vender</a>
+          <a href="añadir-usuarios.html" class="btn btn-primary m-1"
+            >Añadir Usuarios</a
+          >
+        </div>
+      </div>
+      <table id="car-table" class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Mostos</th>
+            <th>Marca</th>
+            <th>vendido</th>
+            <th>vendido a</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Rows will be populated here -->
+        </tbody>
+      </table>
+    </div>
+
+    <script type="module" src="/js/firebase.js"></script>
+
+    <script type="module">
+      import { collection, getDocs, db } from "/js/firebase.js";
+
+      async function populateTable() {
+        const querySnapshot = await getDocs(collection(db, "ventas"));
+        const tableBody = document.querySelector("#car-table tbody");
+
+        querySnapshot.forEach((doc) => {
+          const data = doc.data();
+
+          const row = tableBody.insertRow();
+
+          const modeloCell = row.insertCell();
+          modeloCell.textContent = data.modelo;
+
+          const marcaCell = row.insertCell();
+          marcaCell.textContent = data.marca;
+
+          const vendidoCell = row.insertCell();
+          vendidoCell.textContent = data.vendida ? "Sí" : "No";
+
+          const vendidoACell = row.insertCell();
+          vendidoACell.textContent = data.usuario || "N/A";
+        });
+      }
+
+      populateTable();
+    </script>
+  </body>
+</html>
