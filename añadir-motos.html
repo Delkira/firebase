@@ -55,6 +55,8 @@
 
       async function eliminarModelo(id) {
         await deleteDoc(doc(db, "modelos", id));
+          //recargame la pagina
+          window.location.reload();
       }
 
       // Hacer la función eliminarModelo globalmente accesible
@@ -70,6 +72,8 @@
 
             await updateDoc(refModelo, { name: nuevoNombreModelo });
             alert("¡Modelo actualizado exitosamente!");
+              //recargame la pagina
+              window.location.reload();
           } catch (error) {
             console.error("Error actualizando documento: ", error);
           }

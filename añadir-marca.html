@@ -59,6 +59,8 @@
 
       async function eliminarMarca(id) {
         await deleteDoc(doc(db, "marcas", id));
+        //recargame la pagina
+        window.location.reload();
       }
 
       // Hacer la función eliminarMarca globalmente accesible
@@ -77,6 +79,9 @@
             await updateDoc(refMarca, { name: nuevoNombreMarca });
 
             alert("¡Marca actualizada exitosamente!");
+
+            //recargame la pagina
+            window.location.reload();
           } catch (error) {
             console.error("Error actualizando documento: ", error);
           }
