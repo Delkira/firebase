@@ -14,6 +14,9 @@ document.getElementById("form-venta").addEventListener("submit", async (e) => {
     console.log("Document written with ID: ", docRef.id);
     alert("¡Venta añadida exitosamente!");
     document.getElementById("form-venta").reset();
+
+    //recargame la pagina
+    window.location.reload();
   } catch (e) {
     console.error("Error adding document: ", e);
   }

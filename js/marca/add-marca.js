@@ -6,4 +6,7 @@ document.getElementById("form-marca").addEventListener("submit", async (e) => {
   const refDoc = doc(db, "marcas", nombreMarca);
   await setDoc(refDoc, { name: nombreMarca });
   document.getElementById("form-marca").reset();
+
+  //recargame la pagina
+  window.location.reload();
 });

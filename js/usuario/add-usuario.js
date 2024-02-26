@@ -6,4 +6,6 @@ document.getElementById("form-usuario").addEventListener("submit", async (e) => 
   const refDoc = doc(db, "usuarios", nombreUsuario);
   await setDoc(refDoc, { name: nombreUsuario });
   document.getElementById("form-usuario").reset();
+  //recargame la pagina
+  window.location.reload();
 });
