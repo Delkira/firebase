@@ -55,7 +55,7 @@ const FormAddProducts = () => {
       category: category,
     };
 
-    alert(product)
+    /* alert(product) */
     createData(`products/${id}`, product);
     setId("");
     setName("");

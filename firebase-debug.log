@@ -1,0 +1,50 @@
+[debug] [2024-03-04T19:05:56.116Z] ----------------------------------------------------------------------
+[debug] [2024-03-04T19:05:56.118Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-03-04T19:05:56.118Z] CLI Version:   13.4.0
+[debug] [2024-03-04T19:05:56.118Z] Platform:      win32
+[debug] [2024-03-04T19:05:56.118Z] Node Version:  v20.11.1
+[debug] [2024-03-04T19:05:56.119Z] Time:          Mon Mar 04 2024 15:05:56 GMT-0400 (hora de Venezuela)
+[debug] [2024-03-04T19:05:56.119Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-03-04T19:05:56.175Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-04T19:05:56.175Z] > authorizing via signed-in user (leacamacho2002@gmail.com)
+[debug] [2024-03-04T19:05:56.175Z] [iam] checking project motocicletas-c0f61 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-03-04T19:05:56.177Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/motocicletas-c0f61:testIamPermissions [none]
+[debug] [2024-03-04T19:05:56.177Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/motocicletas-c0f61:testIamPermissions x-goog-quota-user=projects/motocicletas-c0f61
+[debug] [2024-03-04T19:05:56.177Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/motocicletas-c0f61:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-03-04T19:05:56.534Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/motocicletas-c0f61:testIamPermissions 200
+[debug] [2024-03-04T19:05:56.534Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/motocicletas-c0f61:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-03-04T19:05:56.535Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/motocicletas-c0f61 [none]
+[debug] [2024-03-04T19:05:56.947Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/motocicletas-c0f61 200
+[debug] [2024-03-04T19:05:56.947Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/motocicletas-c0f61 {"projectId":"motocicletas-c0f61","projectNumber":"536600879864","displayName":"motocicletas","name":"projects/motocicletas-c0f61","resources":{"hostingSite":"motocicletas-c0f61","realtimeDatabaseInstance":"motocicletas-c0f61-default-rtdb"},"state":"ACTIVE","etag":"1_6376ca90-f9bd-41f7-bed6-62bc974e942c"}
+[info] 
+[info] === Deploying to 'motocicletas-c0f61'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2024-03-04T19:05:56.952Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/motocicletas-c0f61/versions [none]
+[debug] [2024-03-04T19:05:56.952Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/motocicletas-c0f61/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2024-03-04T19:05:58.090Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/motocicletas-c0f61/versions 200
+[debug] [2024-03-04T19:05:58.091Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/motocicletas-c0f61/versions {"name":"projects/536600879864/sites/motocicletas-c0f61/versions/af54acb56a4cea52","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[motocicletas-c0f61]: beginning deploy... 
+[info] i  hosting[motocicletas-c0f61]: found 12 files in build 
+[debug] [2024-03-04T19:05:58.099Z] [hosting] uploading with 200 concurrency
+[debug] [2024-03-04T19:05:58.235Z] [hosting] hash cache [YnVpbGQ] stored for 12 files
+[debug] [2024-03-04T19:05:58.235Z] [hosting][hash queue][FINAL] {"max":131,"min":2,"avg":17,"active":0,"complete":12,"success":12,"errored":0,"retried":0,"total":12,"elapsed":134}
+[debug] [2024-03-04T19:05:58.236Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/536600879864/sites/motocicletas-c0f61/versions/af54acb56a4cea52:populateFiles [none]
+[debug] [2024-03-04T19:05:58.236Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/536600879864/sites/motocicletas-c0f61/versions/af54acb56a4cea52:populateFiles {"files":{"/favicon.ico":"27edce7be5922cf0bef7d4136f69b5bfbdd5bf8c13c7b026f71187d41a00aa7d","/logo192.png":"79e2b749561016bc8af300ea19f48347ceed3cb1a54f48ae456172eca45e08f0","/logo512.png":"212b102aa09e51b3b3e06647e81f7801a61333e171f6582e8124379aabccb41d","/manifest.json":"ee04fb47e525c67d8424ffe9b4d8a8a24e434504478afca4e0ca602146836d4c","/robots.txt":"bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49","/asset-manifest.json":"64dab266fb180f33249b8c8598c54b7b7e116f199cb95d1ed1d591893e12306e","/index.html":"f2fb75a39a78bdc90afb6236ed0770fe20c2a38a90c69b97d4773a757417a399","/static/js/main.7d712546.js.LICENSE.txt":"66f126be3de044629c13b84c463e53891b542f4d4cc9d14dd02c9411e72204bb","/static/css/main.d5289b2f.css":"9510f292d4d91236011b9317d67aeb321bdb2182fbcd55d33be17394aceed89a","/static/js/main.7d712546.js":"78754685a521dffb8ae69f70ee0e4e5e740d77c7070333c028f16623f38c8d5d","/static/css/main.d5289b2f.css.map":"0675f5948545d9a2b0e8c7bdd2a66104fc94754dac588179bc20bdadbc6a8b05","/static/js/main.7d712546.js.map":"ab1b1ae8906dfc74e48dd8d8758cba8357f295b2fde5f5f8377c8a2385a4f475"}}
+[debug] [2024-03-04T19:05:58.622Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/536600879864/sites/motocicletas-c0f61/versions/af54acb56a4cea52:populateFiles 200
+[debug] [2024-03-04T19:05:58.623Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/536600879864/sites/motocicletas-c0f61/versions/af54acb56a4cea52:populateFiles {"uploadRequiredHashes":["64dab266fb180f33249b8c8598c54b7b7e116f199cb95d1ed1d591893e12306e","78754685a521dffb8ae69f70ee0e4e5e740d77c7070333c028f16623f38c8d5d","f2fb75a39a78bdc90afb6236ed0770fe20c2a38a90c69b97d4773a757417a399","ab1b1ae8906dfc74e48dd8d8758cba8357f295b2fde5f5f8377c8a2385a4f475"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/motocicletas-c0f61/versions/af54acb56a4cea52/files"}
+[debug] [2024-03-04T19:05:58.624Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/motocicletas-c0f61/versions/af54acb56a4cea52/files/64dab266fb180f33249b8c8598c54b7b7e116f199cb95d1ed1d591893e12306e [none]
+[debug] [2024-03-04T19:05:58.624Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/motocicletas-c0f61/versions/af54acb56a4cea52/files/64dab266fb180f33249b8c8598c54b7b7e116f199cb95d1ed1d591893e12306e [stream]
+[debug] [2024-03-04T19:05:58.625Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/motocicletas-c0f61/versions/af54acb56a4cea52/files/78754685a521dffb8ae69f70ee0e4e5e740d77c7070333c028f16623f38c8d5d [none]
+[debug] [2024-03-04T19:05:58.625Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/motocicletas-c0f61/versions/af54acb56a4cea52/files/78754685a521dffb8ae69f70ee0e4e5e740d77c7070333c028f16623f38c8d5d [stream]
+[debug] [2024-03-04T19:05:58.626Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/motocicletas-c0f61/versions/af54acb56a4cea52/files/f2fb75a39a78bdc90afb6236ed0770fe20c2a38a90c69b97d4773a757417a399 [none]
+[debug] [2024-03-04T19:05:58.626Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/motocicletas-c0f61/versions/af54acb56a4cea52/files/f2fb75a39a78bdc90afb6236ed0770fe20c2a38a90c69b97d4773a757417a399 [stream]
+[debug] [2024-03-04T19:05:58.626Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/motocicletas-c0f61/versions/af54acb56a4cea52/files/ab1b1ae8906dfc74e48dd8d8758cba8357f295b2fde5f5f8377c8a2385a4f475 [none]
+[debug] [2024-03-04T19:05:58.627Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/motocicletas-c0f61/versions/af54acb56a4cea52/files/ab1b1ae8906dfc74e48dd8d8758cba8357f295b2fde5f5f8377c8a2385a4f475 [stream]
+[debug] [2024-03-04T19:05:58.627Z] [hosting][populate queue][FINAL] {"max":390,"min":390,"avg":390,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":393}
+[debug] [2024-03-04T19:05:58.627Z] [hosting] uploads queued: 4
+[debug] [2024-03-04T19:05:59.618Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/motocicletas-c0f61/versions/af54acb56a4cea52/files/f2fb75a39a78bdc90afb6236ed0770fe20c2a38a90c69b97d4773a757417a399 200
+[debug] [2024-03-04T19:05:59.618Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/motocicletas-c0f61/versions/af54acb56a4cea52/files/f2fb75a39a78bdc90afb6236ed0770fe20c2a38a90c69b97d4773a757417a399 [stream]
+[debug] [2024-03-04T19:05:59.712Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/motocicletas-c0f61/versions/af54acb56a4cea52/files/64dab266fb180f33249b8c8598c54b7b7e116f199cb95d1ed1d591893e12306e 200
+[debug] [2024-03-04T19:05:59.712Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/motocicletas-c0f61/versions/af54acb56a4cea52/files/64dab266fb180f33249b8c8598c54b7b7e116f199cb95d1ed1d591893e12306e [stream]
