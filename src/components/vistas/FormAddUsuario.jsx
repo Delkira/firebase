@@ -38,6 +38,8 @@ const FormAddUsuario = () => {
       direccion: direccion,
       correo: correo,
     };
+
+    console.log(user)
     createData(`users/${cedula}`, user);
     setCedula("");
     setName("");
@@ -66,7 +68,49 @@ const FormAddUsuario = () => {
 
   return (
     <Container style={{ maxWidth: "1000px", margin: "0 auto" }}>
-      <Form onSubmit={handleSubmit}>{/* El resto de tu formulario... */}</Form>
+ 
+        <Form onSubmit={handleSubmit}>
+          <Form.Group className="mb-3">
+            <Form.Label>Cédula</Form.Label>
+            <Form.Control
+              type="text"
+              value={cedula}
+              onChange={(e) => setCedula(e.target.value)}
+            />
+          </Form.Group>
+
+          <Form.Group className="mb-3">
+            <Form.Label>Nombre</Form.Label>
+            <Form.Control
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </Form.Group>
+
+          <Form.Group className="mb-3">
+            <Form.Label>Dirección</Form.Label>
+            <Form.Control
+              type="text"
+              value={direccion}
+              onChange={(e) => setDireccion(e.target.value)}
+            />
+          </Form.Group>
+
+          <Form.Group className="mb-3">
+            <Form.Label>Correo</Form.Label>
+            <Form.Control
+              type="email"
+              value={correo}
+              onChange={(e) => setCorreo(e.target.value)}
+            />
+          </Form.Group>
+
+          <Button variant="primary" type="submit">
+            Añadir usuario
+          </Button>
+        </Form>
+
 
       <Table striped bordered hover className="mt-3">
         <thead>

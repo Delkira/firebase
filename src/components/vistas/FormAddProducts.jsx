@@ -54,6 +54,8 @@ const FormAddProducts = () => {
       cost: cost,
       category: category,
     };
+
+    alert(product)
     createData(`products/${id}`, product);
     setId("");
     setName("");
@@ -80,7 +82,52 @@ const FormAddProducts = () => {
 
   return (
     <Container style={{ maxWidth: "1000px", margin: "0 auto" }}>
-      <Form onSubmit={handleSubmit}>{/* El resto de tu formulario... */}</Form>
+      <Form onSubmit={handleSubmit}>
+        <Form.Group className="mb-3">
+          <Form.Label>ID</Form.Label>
+          <Form.Control
+            type="text"
+            value={id}
+            onChange={(e) => setId(e.target.value)}
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-3">
+          <Form.Label>Nombre</Form.Label>
+          <Form.Control
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-3">
+          <Form.Label>Costo</Form.Label>
+          <Form.Control
+            type="number"
+            value={cost}
+            onChange={(e) => setCost(e.target.value)}
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-3">
+          <Form.Label>Categoría</Form.Label>
+          <Form.Select
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            {categories.map((category) => (
+              <option key={category.id} value={category.id}>
+                {category.name}
+              </option>
+            ))}
+          </Form.Select>
+        </Form.Group>
+
+        <Button variant="primary" type="submit">
+          Añadir producto
+        </Button>
+      </Form>
 
       <Table striped bordered hover className="mt-3">
         <thead>
